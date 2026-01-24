@@ -1,0 +1,15 @@
+# {{ book.title }}
+
+<img width="300" height="auto" alt="image" src="{{ book.cover }}" />
+
+- 저자: {{ book.author | default('?') }}
+- 링크: {{ book.url }}
+
+## 📑 목차
+{% for chapter in book.chapters -%}
+### [{{ chapter.title }}](./{{ chapter.title | replace(" ", "_") }}/index.md)
+{% for section in chapter.sections -%}
+- {{ section }}
+{% endfor %}
+
+{% endfor %}
