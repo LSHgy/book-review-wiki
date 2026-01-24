@@ -1,0 +1,24 @@
+# 프로젝트 전역 설정
+project:
+  name: "Book Review Wiki"
+  version: "1.0.0"
+
+paths:
+  # 원천 데이터 위치
+  raw_data_dir: "data/raw"
+  # 결과물 생성 위치
+  output_dir: "reviews"
+  # 템플릿 위치
+  template_dir: "templates"
+  # 공통 이미지 위치
+  static_dir: "static"
+
+templates:
+  book_main: "book.md.j2"
+  chapter_main: "chapter.md.j2"
+
+settings:
+  # 폴더명 생성 시 공백을 대체할 문자 (예: " " -> "_")
+  space_replacement: "_"
+  # 이미 파일이 존재할 때 덮어쓸지 여부
+  overwrite: false
