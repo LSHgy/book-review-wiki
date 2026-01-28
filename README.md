@@ -1,13 +1,13 @@
-# 📚 Book Review Wiki Automator
+# Book Review Wiki Automator
 Markdown 기반의 도서 리스트를 분석하여, 로컬 환경에 체계적인 독서 노트 폴더 구조를 자동으로 생성해주는 파이썬 도구입니다.
 
-## ✨ Key Features
+## Key Features
 - MD to YAML Parsing: 단순 텍스트로 된 목차를 구조화된 데이터로 변환합니다.  
 - Automated Scaffolding: 책 제목과 챕터명을 기반으로 폴더 및 index.md 파일을 자동 생성합니다.  
 - Jinja2 Templates: 깔끔하고 일관된 Markdown 레이아웃을 제공합니다.  
 - Smart Links: 메인 페이지와 각 챕터 간의 상호 이동 링크를 자동으로 구성합니다.  
 
-## 🏗️ Project Structure
+## Project Structure
 ```Plaintext
 book-review-wiki/
 ├── src/
@@ -21,7 +21,7 @@ book-review-wiki/
 └── main.py             # 통합 관리 CLI
 ```
 
-### 🚀 Quick Start
+### Quick Start
 #### 1. 환경 설정
 ```bash
 # 가상환경 생성 및 활성화
@@ -41,14 +41,14 @@ python main.py all -i ./data/raw/your-book.md
 
 B. **단계별 실행**
 ```bash
-# 1. YAML 생성
-python main.py parse -i ./data/raw/your-book.md -o input.yaml
+# 1. YAML 생성: -i(req, 파싱대상) -o(출력파일)
+python main.py parse -i ./data/raw/your-book-list.md -o input.yaml
 
 # 2. 폴더 및 파일 생성
 python main.py build -c input.yaml
 ```
 
-### 📝 Input Format Example
+### Input Format Example
 원본 Markdown 파일(data/raw/*.md)은 아래와 같은 규칙을 따라야 합니다.
 ```markdown
 # 책 제목
@@ -57,7 +57,7 @@ python main.py build -c input.yaml
 - 세부 섹션 2
 ```
 
-### 🛠️ Customization
+### Customization
 Templates: templates/ 폴더 내의 .j2 파일을 수정하여 독서 노트의 디자인을 바꿀 수 있습니다.
 
 Config: config.yaml에서 결과물이 저장될 경로 등을 설정할 수 있습니다
